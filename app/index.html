@@ -1,0 +1,324 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit">
+  <title>Varun Aggarwal</title>
+
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="VA">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animate.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- Because this project uses vulcanize this should be your only html import
+  in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-styles/color.html">
+  <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+</head>
+
+<body unresolved>
+  <!-- build:remove -->
+  <span id="browser-sync-binding"></span>
+  <!-- endbuild -->
+
+  <template is="dom-bind" id="app">
+    <style is="custom-style">
+      paper-scroll-header-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--paper-grey-200, #eee);
+        /* background for toolbar when it is at its full size background-image: url(images/profile.jpg);*/
+        --paper-scroll-header-panel-full-header: {
+          background-color: #039BE5;
+        };
+        /* background for toolbar when it is condensed background-image: url(images/bg4.jpg);*/
+        --paper-scroll-header-panel-condensed-header: {
+          background-color: #00bcd4;
+        };
+      }
+      paper-toolbar.tall {
+        /* custom toolbar height */
+        height: 256px;
+        background-color: transparent;
+      }
+      paper-toolbar.tall .title {
+        font-size: 40px;
+        margin-left: 60px;
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+      }
+      paper-tab[link] a {
+        /* These mixins (from iron-flex-layout) center the link text. */
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer {
+        height: 250px;
+        font-size: 14px;
+        width: 100%;
+        z-index: 10;
+        overflow: hidden;
+        background: #f2f2f2;
+        padding: 5px 0;
+        bottom: 0;
+      }
+      @media(max-width: 768px) {
+        .var-footer-height {
+         height: 450px;
+        }
+      }
+      #copyright {
+        text-align: center;
+        color: #d9d9d9;
+        font-size: 14px;
+        padding: 20px;
+        background:#2a2a2a;
+      }
+      .head {
+        font-size: 25px;
+        color: black;
+      }
+      .container {
+        height: 200px;
+        padding-right: 50px;
+        padding-left: 50px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #424242;
+      }
+      @media(max-width: 768px) {
+        .var-container-height {
+         height: 400px;
+        }
+      }
+.col {
+      top: 20px;
+      width: 25%;
+      float: left;
+      position: relative;
+      color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .var-width {
+      width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .var-width {
+      width: 50%;
+  }
+}
+.col h3 {
+  font-size: 24px!important;
+  font-weight: 200;
+  margin-top: 0px;
+}
+.list-unstyled  {
+  list-style:none;
+  padding-left: 0px;
+}
+    </style>
+    <paper-scroll-header-panel main id="headerPanelMain" condenses header-height="256" condensed-header-height="64">
+      <!-- Main Toolbar -->
+      <paper-toolbar id="mainToolbar" class="tall">
+        <span class="space"></span>
+
+        <!-- Application name -->
+        <div class="middle middle-container">
+          <div class="app-name">Varun Aggarwal
+            <p class="bottom-container">Software Engineer</p>
+          </div>
+        </div>
+
+        <!-- Application sub title -->
+
+        <paper-tabs selected="0" class="bottom self-end bottom-container fit" attr-for-selected="data-route" selected="[[route]]">
+          <paper-tab link>
+            <a data-route="home" href="{{baseUrl}}" tabindex="-1" class="bottom-title">About Me</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="skills" href="{{baseUrl}}skills" tabindex="-1" class="bottom-title">Skills</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="certifications" href="{{baseUrl}}certifications" tabindex="-1" class="bottom-title">Certifications</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="contact" href="{{baseUrl}}contact" tabindex="-1" class="bottom-title">Contact</a>
+          </paper-tab>
+        </paper-tabs>
+      </paper-toolbar>
+
+
+      <!-- Main Content -->
+      <div class="content">
+        <iron-pages attr-for-selected="data-route" selected="{{route}}">
+          <section data-route="home">
+            <paper-material elevation="1">
+              <my-greeting class="focus-target" tabindex="-1"></my-greeting>
+
+              <p class="head">Profile</p>
+              <my-profile></my-profile>
+            </paper-material>
+
+            <paper-material elevation="1">
+              <p>This is another card.</p>
+            </paper-material>
+          </section>
+
+          <section data-route="skills">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">Skills</h1>
+              <my-skills></my-skills>
+            </paper-material>
+          </section>
+
+          <section data-route="certifications">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target animated bounce" tabindex="-1">Certifications</h1>
+              <div class="animated zoomInDown">
+                <li><span>1Z0-804 Java SE 7 Programmer II (OCP from Oracle)</span></li>
+                <li><span>1Z0-803 Java SE 7 Programmer I (OCA from Oracle)</span></li>
+                <li><span>SCRUM Master from Scrum.org</span></li>
+              </div>
+            </paper-material>
+          </section>
+
+          <section data-route="user-info">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>
+              <div>This is {{params.name}}'s section</div>
+            </paper-material>
+          </section>
+
+          <section data-route="contact">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
+              <p>This is the contact section</p>
+            </paper-material>
+          </section>
+        </iron-pages>
+        <paper-material id="footer" class="footer var-footer-height" elevation="1">
+        <div class="container var-container-height">
+        <div class="col var-width">
+          <img style="width:55%;" src="images/profile.jpg" alt="Varun Aggarwal" id="footerLogo">
+          <li class="list-unstyled">Author : <a href="#"><br>Varun Aggarwal</a></li>
+        </div>
+        <div class="col var-width">
+          <h3>Projects</h3>
+          <ul class="list-unstyled">
+            <li>To be added...</li>
+          </ul>
+        </div>
+        <div class="col var-width">
+          <h3>Social Media</h3>
+          <ul class="list-unstyled">
+           <li>
+            <a href="https://www.linkedin.com/in/varun-aggarwal-08275810" target="_blank" alt="LinkedIn" title="LinkedIn">
+            <iron-icon src="images/linkedin_logo.png"></iron-icon>
+            </a>
+            <a href="https://github.com/varun-aggarwal" target="_blank" alt="Github" title="Github">
+            <iron-icon src="images/github.png"></iron-icon>
+            </a>
+          </li>
+          </ul>
+        </div>
+        <div class="col var-width">
+          <h3>Contact</h3>
+          <ul class="list-unstyled">
+            <li>De Bruynkopsstraat 9,</li>
+            <li>2288 EC, Rijswijk</li>
+            <li><i class="icon-phone"></i>+31 (0) 6 52  824 324</li>
+            <li><i class="icon-mail-alt"></i><a href="mailto:info@varun-aggarwal.com">info@varun-aggarwal.com</a></li>
+          </ul>
+        </div>
+        </div>
+        <div id="copyright">&#169; 2016 <a href="http://www.varun-aggarwal.com" target="blank">Varun Aggarwal</a>. All Rights Reserved.</div>
+      </paper-material>
+    </div>
+
+  </paper-scroll-header-panel>
+
+  <paper-toast id="toast">
+    <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+  </paper-toast>
+
+  <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          base-uri="bower_components/platinum-sw/bootstrap"
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+  -->
+
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>

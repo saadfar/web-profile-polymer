@@ -1,0 +1,51 @@
+  <!--
+  @license
+  Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+  This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+  The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+  The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+  Code distributed by Google as part of the polymer project is also
+  subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+  -->
+
+  <link rel="import" href="../../bower_components/polymer/polymer.html">
+  <link rel="import" href="../../bower_components/paper-styles/typography.html">
+  <link rel="stylesheet" href="../../styles/animate.css">
+  <dom-module id="my-greeting">
+    <template>
+      <style include="shared-styles">
+        :host {
+          display: block;
+        }
+
+        span,
+        input {
+          @apply(--paper-font-body2);
+        }
+        #title {
+          color: #606060;
+        }
+        #name {
+          font-size: 150%;
+          color: black;
+        }
+      </style>
+  <div class="animated slideInLeft">
+      <h1 id="title" tabindex="-1">Hello, My name is <label id="name" >Varun Aggarwal</label></h1>
+      <label for="greeting-input">Responsible and committed IT Professional with work experience of more than 7 years of diverse technology projects in Application Development, Business interaction and Interface design.</label></div>
+      <!-- Listens for "input" event and sets greeting to <input>.value -->
+    </template>
+
+    <script>
+      (function() {
+        'use strict';
+
+        Polymer({
+          is: 'my-greeting',
+
+          properties: {
+          }
+        });
+      })();
+    </script>
+  </dom-module>
