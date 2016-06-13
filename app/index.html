@@ -130,6 +130,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .head {
         font-size: 25px;
         color: black;
+        font-weight: 400;
       }
       .container {
         height: 200px;
@@ -211,15 +212,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <iron-pages attr-for-selected="data-route" selected="{{route}}">
         <section data-route="home">
           <paper-material elevation="1">
+            <h1 class="page-title focus-target animated bounce" tabindex="-1">About Me</h1>
             <my-greeting class="focus-target" tabindex="-1"></my-greeting>
 
             <p class="head">Profile</p>
             <my-profile></my-profile>
           </paper-material>
 
-          <paper-material elevation="1">
-            <p>This is another card.</p>
-          </paper-material>
         </section>
 
         <section data-route="skills">
