@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+<link rel="stylesheet" href="../../styles/animate.css">
+  <dom-module id="contact-me">
+<template>
+	<style include="shared-styles">
+        :host {
+          display: block;
+        }
+    </style>
+
+    <ul>
+     	<li>De Bruynkopsstraat 9,</li>
+        <li>2288 EC, Rijswijk</li>
+        <li><i class="icon-phone"></i>+31 (0) 6 52 824 324</li>
+        <li><i class="icon-mail-alt"></i><a href="mailto:info@varun-aggarwal.com">info@varun-aggarwal.com</a></li>
+    </ul>
+    </template>
+
+    <script>
+      (function() {
+        'use strict';
+
+        Polymer({
+          is: 'contact-me',
+
+          properties: {
+          }
+        });
+      })();
+    </script>

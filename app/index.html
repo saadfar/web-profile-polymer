@@ -113,65 +113,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         overflow: hidden;
         background: #f2f2f2;
         padding: 5px 0;
-        bottom: 0;
+        margin-bottom: 0px;
       }
       @media(max-width: 768px) {
         .var-footer-height {
          height: 450px;
         }
       }
-      #copyright {
-        text-align: center;
-        color: #d9d9d9;
-        font-size: 14px;
-        padding: 20px;
-        background:#2a2a2a;
-      }
       .head {
         font-size: 25px;
         color: black;
         font-weight: 400;
       }
-      .container {
-        height: 200px;
-        padding-right: 50px;
-        padding-left: 50px;
-        margin-right: auto;
-        margin-left: auto;
-        background-color: #424242;
-      }
-      @media(max-width: 768px) {
-        .var-container-height {
-         height: 400px;
-        }
-      }
-    .col {
-          top: 20px;
-          width: 25%;
-          float: left;
-          position: relative;
-          color: #ffffff;
-    }
-
-    @media (min-width: 992px) {
-      .var-width {
-          width: 25%;
-      }
-    }
-    @media (max-width: 768px) {
-      .var-width {
-          width: 50%;
-      }
-    }
-    .col h3 {
-      font-size: 24px!important;
-      font-weight: 200;
-      margin-top: 0px;
-    }
-    .list-unstyled  {
-      list-style:none;
-      padding-left: 0px;
-    }
 
   </style>
 
@@ -231,11 +184,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <section data-route="certifications">
           <paper-material elevation="1">
             <h1 class="page-title focus-target animated bounce" tabindex="-1">Certifications</h1>
-            <div class="animated zoomInDown">
-              <li><span>1Z0-804 Java SE 7 Programmer II (OCP from Oracle)</span></li>
-              <li><span>1Z0-803 Java SE 7 Programmer I (OCA from Oracle)</span></li>
-              <li><span>SCRUM Master from Scrum.org</span></li>
-            </div>
+              <my-certifications></my-certifications>
           </paper-material>
         </section>
 
@@ -249,49 +198,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <section data-route="contact">
           <paper-material elevation="1">
             <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
-            <p>This is the contact section</p>
+            <contact-me></contact-me>
           </paper-material>
         </section>
       </iron-pages>
       <paper-material id="footer" class="footer var-footer-height" elevation="1">
-        <div class="container var-container-height">
-          <div class="col var-width">
-            <img style="width:55%;" src="images/profile.jpg" alt="Varun Aggarwal" id="footerLogo">
-            <li class="list-unstyled">Author : <a href="#"><br>Varun Aggarwal</a></li>
-          </div>
-          <div class="col var-width">
-            <h3>Projects</h3>
-            <ul class="list-unstyled">
-              <li>To be added...</li>
-            </ul>
-          </div>
-          <div class="col var-width">
-            <h3>Social Media</h3>
-            <ul class="list-unstyled">
-              <li>
-                <a href="https://www.linkedin.com/in/varun-aggarwal-08275810" target="_blank" alt="LinkedIn"
-                   title="LinkedIn">
-                  <iron-icon src="images/linkedin_logo.png"></iron-icon>
-                </a>
-                <a href="https://github.com/varun-aggarwal" target="_blank" alt="Github" title="Github">
-                  <iron-icon src="images/github.png"></iron-icon>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col var-width">
-            <h3>Contact</h3>
-            <ul class="list-unstyled">
-              <li>De Bruynkopsstraat 9,</li>
-              <li>2288 EC, Rijswijk</li>
-              <li><i class="icon-phone"></i>+31 (0) 6 52 824 324</li>
-              <li><i class="icon-mail-alt"></i><a href="mailto:info@varun-aggarwal.com">info@varun-aggarwal.com</a></li>
-            </ul>
-          </div>
-        </div>
-        <div id="copyright">&#169; 2016 <a href="http://www.varun-aggarwal.com" target="blank">Varun Aggarwal</a>. All
-          Rights Reserved.
-        </div>
+        <app-footer></app-footer>
       </paper-material>
     </div>
 
