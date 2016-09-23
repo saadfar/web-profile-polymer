@@ -13,9 +13,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content="Online profile Varun Aggarwal">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Polymer Starter Kit">
+  <meta name="generator" content="Polymer">
   <title>Varun Aggarwal</title>
 
   <!-- Place favicon.ico in the `app/` directory -->
@@ -31,13 +31,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="VA">
+  <meta name="application-name" content="Varun Aggarwal">
   <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <meta name="apple-mobile-web-app-title" content="Varun Aggarwal">
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
   <!-- Tile icon for Win8 (144x144) -->
@@ -62,15 +62,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84644300-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
 </head>
 
 <body unresolved>
-<!-- build:remove -->
-<span id="browser-sync-binding"></span>
-<!-- endbuild -->
+  <!-- build:remove -->
+  <span id="browser-sync-binding"></span>
+  <!-- endbuild -->
 
-<template is="dom-bind" id="app">
-  <style is="custom-style">
+  <template is="dom-bind" id="app">
+    <style is="custom-style">
       paper-scroll-header-panel {
         position: absolute;
         top: 0;
@@ -81,23 +91,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         /* background for toolbar when it is at its full size background-image: url(images/profile.jpg);*/
         --paper-scroll-header-panel-full-header: {
           background-color: #039BE5;
-        };
+        }
+        ;
         /* background for toolbar when it is condensed background-image: url(images/bg4.jpg);*/
         --paper-scroll-header-panel-condensed-header: {
           background-color: #00bcd4;
-        };
+        }
+        ;
       }
+
       paper-toolbar.tall {
         /* custom toolbar height */
         height: 200px;
         background-color: transparent;
       }
+
       paper-toolbar.tall .title {
         font-size: 40px;
         margin-left: 60px;
         -webkit-transform-origin: left center;
         transform-origin: left center;
       }
+
       paper-tab[link] a {
         /* These mixins (from iron-flex-layout) center the link text. */
         @apply(--layout-horizontal);
@@ -105,6 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #fff;
         text-decoration: none;
       }
+
       .footer {
         height: 250px;
         font-size: 14px;
@@ -115,106 +131,106 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 5px 0;
         margin-bottom: 0px;
       }
+
       @media(max-width: 768px) {
         .var-footer-height {
-         height: 450px;
+          height: 450px;
         }
       }
+
       .head {
         font-size: 25px;
         color: black;
         font-weight: 400;
       }
+    </style>
 
-  </style>
+    <paper-scroll-header-panel main id="headerPanelMain" condenses header-height="256" condensed-header-height="64">
+      <!-- Main Toolbar -->
+      <paper-toolbar id="mainToolbar" class="tall">
+        <span class="space"></span>
 
-  <paper-scroll-header-panel main id="headerPanelMain" condenses header-height="256" condensed-header-height="64">
-    <!-- Main Toolbar -->
-    <paper-toolbar id="mainToolbar" class="tall">
-      <span class="space"></span>
-
-      <!-- Application name -->
-      <div class="middle middle-container">
-        <div class="app-name">Varun Aggarwal
-          <p class="bottom-container">Software Engineer</p>
+        <!-- Application name -->
+        <div class="middle middle-container">
+          <div class="app-name">Varun Aggarwal
+            <p class="bottom-container">Software Engineer</p>
+          </div>
         </div>
+
+        <!-- Application sub title -->
+
+        <paper-tabs selected="0" class="bottom self-end bottom-container fit" attr-for-selected="data-route" selected="[[route]]">
+          <paper-tab link>
+            <a data-route="home" href="{{baseUrl}}" tabindex="-1" class="bottom-title">About Me</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="skills" href="{{baseUrl}}skills" tabindex="-1" class="bottom-title">Skills</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="certifications" href="{{baseUrl}}certifications" tabindex="-1" class="bottom-title">Certifications</a>
+          </paper-tab>
+          <paper-tab link>
+            <a data-route="contact" href="{{baseUrl}}contact" tabindex="-1" class="bottom-title">Contact</a>
+          </paper-tab>
+        </paper-tabs>
+      </paper-toolbar>
+
+
+      <!-- Main Content -->
+      <div class="content">
+        <iron-pages attr-for-selected="data-route" selected="{{route}}">
+          <section data-route="home">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target animated bounce" tabindex="-1">About Me</h1>
+              <my-greeting class="focus-target" tabindex="-1"></my-greeting>
+
+              <p class="head">Profile</p>
+              <my-profile></my-profile>
+            </paper-material>
+
+          </section>
+
+          <section data-route="skills">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">Skills</h1>
+              <my-skills></my-skills>
+            </paper-material>
+          </section>
+
+          <section data-route="certifications">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target animated bounce" tabindex="-1">Certifications</h1>
+              <my-certifications></my-certifications>
+            </paper-material>
+          </section>
+
+          <section data-route="user-info">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>
+              <div>This is {{params.name}}'s section</div>
+            </paper-material>
+          </section>
+
+          <section data-route="contact">
+            <paper-material elevation="1">
+              <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
+              <contact-me></contact-me>
+            </paper-material>
+          </section>
+        </iron-pages>
+        <paper-material id="footer" class="footer var-footer-height" elevation="1">
+          <app-footer></app-footer>
+        </paper-material>
       </div>
 
-      <!-- Application sub title -->
+    </paper-scroll-header-panel>
 
-      <paper-tabs selected="0" class="bottom self-end bottom-container fit" attr-for-selected="data-route"
-                  selected="[[route]]">
-        <paper-tab link>
-          <a data-route="home" href="{{baseUrl}}" tabindex="-1" class="bottom-title">About Me</a>
-        </paper-tab>
-        <paper-tab link>
-          <a data-route="skills" href="{{baseUrl}}skills" tabindex="-1" class="bottom-title">Skills</a>
-        </paper-tab>
-        <paper-tab link>
-          <a data-route="certifications" href="{{baseUrl}}certifications" tabindex="-1" class="bottom-title">Certifications</a>
-        </paper-tab>
-        <paper-tab link>
-          <a data-route="contact" href="{{baseUrl}}contact" tabindex="-1" class="bottom-title">Contact</a>
-        </paper-tab>
-      </paper-tabs>
-    </paper-toolbar>
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
 
-
-    <!-- Main Content -->
-    <div class="content">
-      <iron-pages attr-for-selected="data-route" selected="{{route}}">
-        <section data-route="home">
-          <paper-material elevation="1">
-            <h1 class="page-title focus-target animated bounce" tabindex="-1">About Me</h1>
-            <my-greeting class="focus-target" tabindex="-1"></my-greeting>
-
-            <p class="head">Profile</p>
-            <my-profile></my-profile>
-          </paper-material>
-
-        </section>
-
-        <section data-route="skills">
-          <paper-material elevation="1">
-            <h1 class="page-title focus-target" tabindex="-1">Skills</h1>
-            <my-skills></my-skills>
-          </paper-material>
-        </section>
-
-        <section data-route="certifications">
-          <paper-material elevation="1">
-            <h1 class="page-title focus-target animated bounce" tabindex="-1">Certifications</h1>
-              <my-certifications></my-certifications>
-          </paper-material>
-        </section>
-
-        <section data-route="user-info">
-          <paper-material elevation="1">
-            <h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>
-            <div>This is {{params.name}}'s section</div>
-          </paper-material>
-        </section>
-
-        <section data-route="contact">
-          <paper-material elevation="1">
-            <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
-            <contact-me></contact-me>
-          </paper-material>
-        </section>
-      </iron-pages>
-      <paper-material id="footer" class="footer var-footer-height" elevation="1">
-        <app-footer></app-footer>
-      </paper-material>
-    </div>
-
-  </paper-scroll-header-panel>
-
-  <paper-toast id="toast">
-    <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
-  </paper-toast>
-
-  <!-- Uncomment next block to enable Service Worker support (1/2) -->
-  <!--
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
   <paper-toast id="caching-complete"
                duration="6000"
                text="Caching complete! This app will work offline.">
@@ -231,11 +247,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </platinum-sw-register>
 -->
 
-</template>
+  </template>
 
-<!-- build:js scripts/app.js -->
-<script src="scripts/app.js"></script>
-<!-- endbuild-->
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
 </body>
 
 </html>

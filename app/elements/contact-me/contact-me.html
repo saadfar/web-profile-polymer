@@ -1,32 +1,58 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/gold-email-input/gold-email-input.html">
+<link rel="import" href="../../bower_components/gold-phone-input/gold-phone-input.html">
 
 <link rel="stylesheet" href="../../styles/animate.css">
-  <dom-module id="contact-me">
-<template>
-	<style include="shared-styles">
-        :host {
-          display: block;
-        }
+<dom-module id="contact-me">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
     </style>
+    <h3>Email</h3> <span>info@varun-aggarwal.com</span>
+    <h3>Phone</h3> <span>+31 652 824 324</span>
+    <h3>Email Form</h3>
+    <div>
+      <gold-email-input required auto-validate error-message="Please enter a valid email" label="Contact email" style="width: 50%;"></gold-email-input>
+    </div>
+    <div>
+      <paper-input id="subject" label="Subject" style="width: 50%;" required/>
+    </div>
+    <div>
+      <paper-textarea id="messageBody" label="Content"  style="width: 50%" required></paper-textarea>
+    </div>
+    <div>
+    <gold-phone-input id="phone"
+          label="Phone number"
+          country-code="31"
+          phone-number-pattern="X-XX-XX-XX-XX"
+          auto-validate style="width: 50%;">
+      </gold-phone-input>
+    </div>
+    <div style="padding-top:10px;">
+      <paper-button raised on-tap="send">Send Mail</paper-button>
+    </div>
+    <div>
+  </template>
 
-    <ul>
-     	<li>De Bruynkopsstraat 9,</li>
-        <li>2288 EC, Rijswijk</li>
-        <li><i class="icon-phone"></i>+31 (0) 6 52 824 324</li>
-        <li><i class="icon-mail-alt"></i><a href="mailto:info@varun-aggarwal.com">info@varun-aggarwal.com</a></li>
-    </ul>
-    </template>
+  <script>
+    (function() {
+      'use strict';
 
-    <script>
-      (function() {
-        'use strict';
+      Polymer({
+        is: 'contact-me',
 
-        Polymer({
-          is: 'contact-me',
+        properties: {},
 
-          properties: {
-          }
-        });
-      })();
-    </script>
+        send: function(e) {
+          console.log(e);
+        }
+      });
+    })();
+  </script>
